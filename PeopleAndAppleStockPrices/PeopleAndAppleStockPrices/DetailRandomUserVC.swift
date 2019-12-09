@@ -23,12 +23,21 @@ class DetailRandomUserVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        nameLabel?.text = "\(randomUser.name.title) \(randomUser.name.first) \(randomUser.name.last)"
+        nameLabel?.text = "\(randomUser.name.title). \(randomUser.name.first) \(randomUser.name.last)"
         emailLabel?.text = randomUser.email
         
         locationLabel?.text = "\(randomUser.location.city), \(randomUser.location.country)"
         
-        
+        imageView.setImage(with: randomUser.picture.medium) { (result) in
+            switch result {
+            case .failure(let appError):
+                print("failed at retrieving image \(appError)")
+            case .success(let image):
+                DispatchQueue.main.async {
+                    self.imageView.image = image
+                }
+            }
+        }
     }
     
 

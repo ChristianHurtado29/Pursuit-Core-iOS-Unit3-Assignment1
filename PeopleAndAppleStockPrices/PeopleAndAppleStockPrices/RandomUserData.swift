@@ -16,17 +16,19 @@ struct User: Decodable {
     let name: Name
     let location: Location
     let email: String
+    let picture: Pic
 }
 
 struct Name: Decodable {
-    let title: String
-    let first: String
-    let last: String
+    let title, first, last: String
 }
 
 struct Location: Decodable {
-    let country: String
-    let city: String
+    let city, country: String
+}
+
+struct Pic: Decodable {
+    let large, medium, thumbnail: String
 }
 
 

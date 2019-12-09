@@ -44,7 +44,7 @@ extension RandomUserVC: UITableViewDataSource{
         let cell = tableView.dequeueReusableCell(withIdentifier: "userCell", for: indexPath)
         let selUser = user[indexPath.row]
         
-        cell.textLabel?.text = "\(selUser.name.title) \(selUser.name.first) \(selUser.name.last)"
+        cell.textLabel?.text = "\(selUser.name.title). \(selUser.name.first) \(selUser.name.last)"
         cell.detailTextLabel?.text = "\(selUser.location.city), \(selUser.location.country)"
         
         return cell
