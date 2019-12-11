@@ -16,7 +16,15 @@ class RandomUserVC: UIViewController {
         }
     }
     
+    var searchQuery = ""{
+        didSet{
+            searchBarQuery()
+        }
+    }
+    
     @IBOutlet weak var tableView: UITableView!
+    
+    @IBOutlet weak var searchBar: UISearchBar!
     
     
     override func viewDidLoad() {
@@ -24,6 +32,15 @@ class RandomUserVC: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         tableView.reloadData()
         tableView.dataSource = self
+        searchBar.delegate = self
+    }
+    
+    func loadData() {
+        tableView.reloadData()
+    }
+    
+    func searchBarQuery() {
+        user = RandomUserData.getUsers().filter{$0.fullName.contains(searchQuery.lowercased())}
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -48,5 +65,16 @@ extension RandomUserVC: UITableViewDataSource{
         cell.detailTextLabel?.text = "\(selUser.location.city), \(selUser.location.country)"
         
         return cell
+    }
+}
+
+extension RandomUserVC: UISearchBarDelegate {
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        guard !searchText.isEmpty else {
+            searchBarQuery()
+            loadData()
+            return
+        }
+        searchQuery = searchText
     }
 }

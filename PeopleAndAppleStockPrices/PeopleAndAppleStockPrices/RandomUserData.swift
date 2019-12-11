@@ -15,6 +15,7 @@ struct RandomUserData: Decodable {
 struct User: Decodable {
     let name: Name
     let location: Location
+    var fullName: String { return name.first + " " + name.last }
     let email: String
     let picture: Pic
 }
@@ -38,7 +39,7 @@ static func getUsers() -> [User] {
     do {
         let data = Bundle.parseJSONData(filename: "RandomUKUser", ext: "json")
         let randomUserData = try JSONDecoder().decode(RandomUserData.self, from: data)
-        users = randomUserData.results
+        users = randomUserData.results.sorted {$0.name.last < $1.name.last}
     } catch {
         fatalError("\(error)")
     }
