@@ -213,6 +213,9 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="rPr-8q-otg" kind="show" id="gKz-LJ-Kha"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -238,6 +241,69 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="l4d-qs-1uq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1958" y="800"/>
+        </scene>
+        <!--Detail StockVC-->
+        <scene sceneID="xo0-qT-dPp">
+            <objects>
+                <viewController id="rPr-8q-otg" customClass="DetailStockVC" customModule="PeopleAndAppleStockPrices" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="GJs-LD-gXf">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="T1X-4X-8K2">
+                                <rect key="frame" x="87" y="161" width="240" height="240"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="Zqn-iY-eiw"/>
+                                    <constraint firstAttribute="height" constant="240" id="z6H-fd-KqT"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="dateLabel" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LPO-P8-clQ">
+                                <rect key="frame" x="20" y="88" width="374" height="33"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="openLabel" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zud-5E-9bv">
+                                <rect key="frame" x="20" y="547" width="374" height="33"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="closeLabel" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="21F-3d-Hzs">
+                                <rect key="frame" x="20" y="636" width="374" height="33"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="sNO-Nm-LoS" firstAttribute="trailing" secondItem="T1X-4X-8K2" secondAttribute="trailing" constant="87" id="4kA-Py-pfI"/>
+                            <constraint firstItem="sNO-Nm-LoS" firstAttribute="trailing" secondItem="Zud-5E-9bv" secondAttribute="trailing" constant="20" id="6Dj-5C-NgR"/>
+                            <constraint firstItem="21F-3d-Hzs" firstAttribute="leading" secondItem="sNO-Nm-LoS" secondAttribute="leading" constant="20" id="6wN-ff-QAs"/>
+                            <constraint firstItem="T1X-4X-8K2" firstAttribute="leading" secondItem="sNO-Nm-LoS" secondAttribute="leading" constant="87" id="9pr-an-ODk"/>
+                            <constraint firstItem="sNO-Nm-LoS" firstAttribute="trailing" secondItem="LPO-P8-clQ" secondAttribute="trailing" constant="20" id="Bqk-ZS-9CN"/>
+                            <constraint firstItem="sNO-Nm-LoS" firstAttribute="trailing" secondItem="21F-3d-Hzs" secondAttribute="trailing" constant="20" id="Pb5-r8-W0U"/>
+                            <constraint firstItem="T1X-4X-8K2" firstAttribute="top" secondItem="LPO-P8-clQ" secondAttribute="bottom" constant="40" id="SuA-JR-vah"/>
+                            <constraint firstItem="LPO-P8-clQ" firstAttribute="top" secondItem="sNO-Nm-LoS" secondAttribute="top" id="Tzv-xV-uu7"/>
+                            <constraint firstItem="Zud-5E-9bv" firstAttribute="top" secondItem="T1X-4X-8K2" secondAttribute="bottom" constant="146" id="ZvE-R3-XDP"/>
+                            <constraint firstItem="LPO-P8-clQ" firstAttribute="leading" secondItem="sNO-Nm-LoS" secondAttribute="leading" constant="20" id="h8z-5O-Cfz"/>
+                            <constraint firstItem="Zud-5E-9bv" firstAttribute="leading" secondItem="sNO-Nm-LoS" secondAttribute="leading" constant="20" id="hd4-ec-qlB"/>
+                            <constraint firstItem="21F-3d-Hzs" firstAttribute="top" secondItem="Zud-5E-9bv" secondAttribute="bottom" constant="56" id="qLz-SX-hXu"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="sNO-Nm-LoS"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="yY4-De-zpQ"/>
+                    <connections>
+                        <outlet property="closeLabel" destination="21F-3d-Hzs" id="jnI-W1-zUZ"/>
+                        <outlet property="dateImage" destination="T1X-4X-8K2" id="idU-AZ-0FN"/>
+                        <outlet property="dateLabel" destination="LPO-P8-clQ" id="1me-Ch-Rkh"/>
+                        <outlet property="openLabel" destination="Zud-5E-9bv" id="fKr-ek-bBR"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MFj-Yv-5Wq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2786.9565217391305" y="799.55357142857144"/>
         </scene>
         <!--Item-->
         <scene sceneID="BZf-lX-FYr">

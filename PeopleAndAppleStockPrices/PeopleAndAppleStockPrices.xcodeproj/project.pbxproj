@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1304694F23A41F1E0092616A /* DetailStockVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1304694E23A41F1E0092616A /* DetailStockVC.swift */; };
 		133E262E239EEFA00073A09C /* UIImageView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 133E262D239EEFA00073A09C /* UIImageView+Extensions.swift */; };
 		133E2630239EEFE60073A09C /* AppError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 133E262F239EEFE60073A09C /* AppError.swift */; };
 		133E2632239EEFFE0073A09C /* NetworkHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 133E2631239EEFFE0073A09C /* NetworkHelper.swift */; };
@@ -27,6 +28,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1304694E23A41F1E0092616A /* DetailStockVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailStockVC.swift; sourceTree = "<group>"; };
 		133E262D239EEFA00073A09C /* UIImageView+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extensions.swift"; sourceTree = "<group>"; };
 		133E262F239EEFE60073A09C /* AppError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppError.swift; sourceTree = "<group>"; };
 		133E2631239EEFFE0073A09C /* NetworkHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkHelper.swift; sourceTree = "<group>"; };
@@ -87,6 +89,7 @@
 				135BB7B1239B036E00402B58 /* RandomUserData.swift */,
 				135BB7B3239B063300402B58 /* Bundle + Ext.swift */,
 				133E2637239F11AF0073A09C /* StockVC.swift */,
+				1304694E23A41F1E0092616A /* DetailStockVC.swift */,
 				133E2633239F00D70073A09C /* stocks.json */,
 				133E2635239F02C50073A09C /* StocksData.swift */,
 				135BB7AF239B031E00402B58 /* RandomUKUser.json */,
@@ -192,6 +195,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				133E2632239EEFFE0073A09C /* NetworkHelper.swift in Sources */,
+				1304694F23A41F1E0092616A /* DetailStockVC.swift in Sources */,
 				133E2638239F11AF0073A09C /* StockVC.swift in Sources */,
 				133E262E239EEFA00073A09C /* UIImageView+Extensions.swift in Sources */,
 				577E5BEE21BA8BA10083EB97 /* RandomUserVC.swift in Sources */,

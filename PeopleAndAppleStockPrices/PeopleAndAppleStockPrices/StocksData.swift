@@ -16,26 +16,6 @@ struct Stocks:Codable {
     let change: Double
 }
 
-//static func getMonths() -> [[Stocks]] {
-//
-//    let sortedMonths = stocks.sorted { $0.label < $1.label }
-//  let classificationTitles: Set<String> = Set(zooAnimals.map { $0.classification })
-//  var sectionsArr = Array(repeating: [ZooAnimal](), count: classificationTitles.count)
-//  var currentIndex = 0
-//  var currentClassification = sortedClassifications.first?.classification ?? "Pursuit"
-//  for animal in sortedClassifications {
-//    if animal.classification == currentClassification {
-//      sectionsArr[currentIndex].append(animal)
-//    } else {
-//      currentIndex += 1
-//      currentClassification = animal.classification
-//      sectionsArr[currentIndex].append(animal)
-//    }
-//  }
-//  return sectionsArr
-//}
-
-
 
 
 extension Stocks {

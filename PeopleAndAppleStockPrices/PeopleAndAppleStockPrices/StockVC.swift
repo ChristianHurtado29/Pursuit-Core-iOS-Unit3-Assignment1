@@ -34,13 +34,22 @@ class StockVC: UIViewController {
         loadData()
     }
     
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let detailStockVC = segue.destination as? DetailStockVC,
+            let indexPath = stockTableView.indexPathForSelectedRow else {
+                fatalError("messed up segue")
+        }
+        detailStockVC.stock = stock[indexPath.row]
+    }
+    
     func loadData() {
         stock = Stocks.getStocks()
         let sortedStock = stock.sorted{ $0.date < $1.date }
     
         var dateArr = [String]()
         
-        var setDate: Set<String> = Set(sortedStock.map { $0.date })
+        let setDate: Set<String> = Set(sortedStock.map { $0.date })
         
         for cas in setDate {
             var andra = cas.components(separatedBy: "-")
@@ -48,8 +57,8 @@ class StockVC: UIViewController {
             dateArr.append(andra.joined(separator: " "))
         }
         
-        var setAct = Set(dateArr)
-        var shit = Array(setAct).sorted()
+        let setAct = Set(dateArr)
+        let shit = Array(setAct).sorted()
         
         appSect = Array(repeating: [Stocks](), count: setAct.count)
         
@@ -60,7 +69,7 @@ class StockVC: UIViewController {
         for anon in sortedStock {
             var ymous = anon.date.components(separatedBy: "-")
             ymous.removeLast()
-            var yearMonth = ymous.joined(separator: " ")
+            let yearMonth = ymous.joined(separator: " ")
             
             if yearMonth == currentSect {
                 appSect[currentIndex].append(anon)
@@ -73,11 +82,7 @@ class StockVC: UIViewController {
         }
 
     }
-    
-//    func searchBarQuery() {
-//        stock = Stocks.getStocks().filter{$0.date.contains(searchQuery)
-//    }
-//}
+
 }
 
 extension StockVC: UITableViewDataSource {
