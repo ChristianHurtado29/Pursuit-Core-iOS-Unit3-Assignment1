@@ -27,9 +27,9 @@ class DetailStockVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        dateLabel.text = stock?.date
-        openLabel.text = stock?.open.description
-        closeLabel.text = stock?.close.description
+        dateLabel.text = stock?.label
+        openLabel.text = "Opened at: $\(stock!.open.description)"
+        closeLabel.text = "Closed at: $\(stock!.close.description)"
         thumbs()
         
     }
