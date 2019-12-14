@@ -14,12 +14,6 @@ class StockVC: UIViewController {
     
     @IBOutlet weak var stockSearchBar: UISearchBar!
     
-//    var searchQuery = ""{
-//        didSet{
-//            searchBarQuery()
-//        }
-//    }
-    
     var stock = [Stocks]() {
         didSet{
             stockTableView.reloadData()
